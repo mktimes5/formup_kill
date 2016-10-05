@@ -1,3 +1,4 @@
 name = Webform File Uplaod Button Kill
 description = kills the upload button on a webform
+core = 7.x
 dependencies[] = webform:webform

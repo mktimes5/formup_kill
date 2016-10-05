@@ -9,7 +9,7 @@ function formup_kill_form_alter(&$form, $form_state, $form_id) {
 
 function formup_kill_my_file_element_process($element, &$form_state, $form) {
     //Devel readout of $element
-    dsm($element)
+    dsm($element);
 }
 
 /*
