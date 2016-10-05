@@ -1,0 +1,18 @@
+<?php
+
+function formup_kill_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == "webform_client_form_2") {
+    // Devel readout of form:
+    // dsm($form);
+  }
+}
+
+function formup_kill_my_file_element_process($element, &$form_state, $form) {
+    //Devel readout of $element
+    dsm($element)
+}
+
+/*
+form ID is : webform_client_form_2
+*/
+

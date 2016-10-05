@@ -1,0 +1,3 @@
+name = Webform File Uplaod Button Kill
+description = kills the upload button on a webform
+dependencies[] = webform:webform
