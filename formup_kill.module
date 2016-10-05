@@ -3,16 +3,37 @@
 function formup_kill_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == "webform_client_form_2") {
     // Devel readout of form:
-    // dsm($form);
+     //dsm($form);
+
+    //add a process the file field
+    $form['submitted']['file']['#process'] = array('formup_kill_file_element_process');
+
+    
+
   }
 }
 
-function formup_kill_my_file_element_process($element, &$form_state, $form) {
-    //Devel readout of $element
-    dsm($element);
+
+function formup_kill_file_element_process($element, &$form_state, $form) {
+    // Devel readout
+    //dsm($form_state);
+    //dsm($element);
+    //dsm($form);
+
+    $element  = file_managed_file_process($element, $form_state, $form);
+    //dsm($element);
+    //disable the upload button
+     $element['upload_button']['#access'] = FALSE;
+     //prevent the file url from showing incase form submitted with errors
+     if (!empty($element['#file']->filename)) {
+        $element['filename']['#markup'] = '<span class="file">'.$element['#file']->filename.'</span>';
+    }
+
+    return $element;
 }
 
 /*
 form ID is : webform_client_form_2
 */
+
 
